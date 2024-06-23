@@ -6,5 +6,16 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index()
 
+# APIs
++ nocsrf
+POST    /add                        controllers.AddController.add
+
+# Swagger
+GET     /swagger.json               controllers.ApiController.swaggerJson
+GET     /api                        controllers.ApiController.swaggerUiRedirect
+GET     /api/                       controllers.ApiController.swaggerUiIndex
+GET     /api/swagger-initializer.js controllers.ApiController.swaggerInitializer
+GET     /api/*file                  controllers.ApiController.swaggerUiAsset(file)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
